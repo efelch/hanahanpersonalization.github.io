@@ -47,7 +47,7 @@ img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
 /* Navigation */
 .nav ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
 .nav a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
-.nav a:hover { color: var(--brand); }
+.nav a:hover:not(.btn) { color: var(--brand); }
 .nav a.active { color: var(--brand); border-bottom: 2px solid var(--brand); }
 
 /* Forms */
@@ -137,6 +137,40 @@ img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
 .section-title { text-align: center; margin-bottom: 3rem; }
 .section-title h2 { font-size: 2.2rem; margin-bottom: 0.5rem; }
 .section-title p { color: var(--muted); }
+
+/* About Us */
+.about-inner {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+.about-image {
+    flex: 1;
+    max-width: 400px;
+}
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+.about-content {
+    flex: 1.5;
+}
+.about-content p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    color: var(--muted);
+}
+@media (max-width: 768px) {
+    .about-inner {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    .about-content .section-title {
+        text-align: center !important;
+    }
+}
 
 /* Product Grid */
 .portfolio-group {
@@ -281,15 +315,25 @@ body.modal-open {
 .footer-logo-icon { width: 60px; height: 60px; }
 
 .btn {
-    display: inline-block; padding: 0.6rem 1.2rem; border-radius: 8px;
-    font-weight: 600; text-decoration: none; transition: all 0.2s;
+    display: inline-block; padding: 0.6rem 1.4rem; border-radius: 8px;
+    font-weight: 600; text-decoration: none; transition: all 0.2s ease;
+    border: none; cursor: pointer;
 }
+.btn-primary { background: var(--brand); color: black; }
+.btn-primary:hover { 
+    background: #9389f7; /* slightly darker/more saturated lilac */
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(162, 155, 254, 0.3);
+}
+.btn-primary:active {
+    transform: translateY(0);
+}
+
 .nav .btn {
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1.2rem;
     font-size: 0.9rem;
 }
-.btn-primary { background: var(--brand); color: white; }
-.btn-primary:hover { opacity: 0.9; transform: scale(1.02); }
 
 @media (max-width: 768px) {
     .nav { display: none; }
