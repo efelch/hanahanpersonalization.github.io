@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Contact Us — Hanahan Personalization</title>
+    <meta content="Get in touch with Hanahan Personalization for custom handmade gifts and decor inquiries." name="description">
+    <meta content="Hanahan Personalization" name="author">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="logo" href="index.html">
+            <span>Hanahan Personalization</span>
+        </a>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a class="active" href="contact.html">Contact Us</a></li>
+                <li><a class="btn btn-primary" href="https://www.etsy.com/shop/MacabreAndMirthworks" target="_blank">Shop Etsy</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h1>Contact Us</h1>
+                <p>Have a question or want to discuss a custom order? We'd love to hear from you!</p>
+            </div>
+
+            <!-- Contact -->
+            <div class="contact-container">
+                <form action="https://formspree.io/f/mvgbjjjo" class="contact-form" id="contact-form" method="POST"
+                      novalidate>
+                    <div class="form-row">
+                        <label for="name">Name</label>
+                        <input autocomplete="name" id="name" name="name" placeholder="Your name" required type="text">
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input autocomplete="email" id="email" name="email" placeholder="you@example.com" required
+                               type="email">
+                    </div>
+                    <div class="form-row">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="How can we help?" required rows="6"></textarea>
+                    </div>
+
+                    <!-- Honeypot for basic bot deterrence -->
+                    <input aria-hidden="true" autocomplete="off" class="hp-field" name="_gotcha" tabindex="-1" type="text">
+
+                    <!-- Success redirect (optional): replace with a thank-you page if you add one -->
+                    <input name="_subject" type="hidden" value="New message from macabreandmirthworks.com">
+                    <input name="_format" type="hidden" value="plain">
+
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">Send message</button>
+                    </div>
+                </form>
+
+                <div class="contact-info">
+                    <h3>Other ways to connect</h3>
+                    <p>Visit our <a href="https://www.etsy.com/shop/MacabreAndMirthworks" target="_blank">Etsy Shop</a> to browse our current listings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2026 Hanahan Personalization. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
