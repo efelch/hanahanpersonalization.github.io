@@ -22,6 +22,11 @@
         <a class="logo" href="/">
             <span>Hanahan Personalization</span>
         </a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <nav class="nav">
             <ul>
                 <li><a href="/">Home</a></li>
@@ -31,6 +36,24 @@
         </nav>
     </div>
 </header>
+
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+
+    navToggle.addEventListener('click', () => {
+        nav.classList.toggle('is-open');
+        navToggle.classList.toggle('is-active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
+            nav.classList.remove('is-open');
+            navToggle.classList.remove('is-active');
+        }
+    });
+</script>
 
 <main>
     <section class="section">
@@ -282,11 +305,56 @@
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/Products/Graduation/6D0D6AEB-387F-442D-BD83-BB176DE04069_1_102_o.jpeg" alt="Graduation Plaque">
+                            <img src="images/Products/Graduation/GraduationDisplayStand.jpeg" alt="Graduation Display Stand">
                         </div>
                         <div class="product-info">
                             <h3>Graduation Achievement Stand</h3>
                             <p>Honoring academic success with style.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Products/Graduation/GraduationCakeTopper.jpg.avif" alt="Graduation Cake Topper">
+                        </div>
+                        <div class="product-info">
+                            <h3>Graduation Cake Topper</h3>
+                            <p>Make their celebration extra special with a custom cake topper.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Products/Graduation/GraduationCenterPieceDisplay.jpg.avif" alt="Graduation Centerpiece Display">
+                        </div>
+                        <div class="product-info">
+                            <h3>Graduation Centerpiece Display</h3>
+                            <p>The perfect centerpiece for your graduation party.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Products/Graduation/GraduationMoneyHolder.jpg.avif" alt="Graduation Money Holder">
+                        </div>
+                        <div class="product-info">
+                            <h3>Graduation Money Holder</h3>
+                            <p>A unique and thoughtful way to gift graduation money.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Products/Graduation/GraduationOrnament.jpg.avif" alt="Graduation Ornament">
+                        </div>
+                        <div class="product-info">
+                            <h3>Graduation Ornament</h3>
+                            <p>Commemorate the big day with a personalized ornament.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Products/Graduation/GraduationPhotoFrame.heic.avif" alt="Graduation Photo Frame">
+                        </div>
+                        <div class="product-info">
+                            <h3>Graduation Photo Frame</h3>
+                            <p>Display your favorite graduation memory in style.</p>
                         </div>
                     </div>
                 </div>
