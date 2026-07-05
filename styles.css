@@ -314,8 +314,8 @@ img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
 .product-info h3 { margin: 0 0 0.3rem; font-size: 1rem; }
 .product-info p { margin: 0; color: var(--muted); font-size: 0.8rem; }
 
-/* Image modal */
-.modal {
+/* Image Modal */
+dialog.modal {
     position: fixed;
     inset: 0;
     display: grid;
@@ -325,10 +325,19 @@ img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
     visibility: hidden;
     transition: opacity .2s ease, visibility .2s ease;
     z-index: 1000;
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
-.modal.is-open {
+dialog.modal[open] {
     opacity: 1;
     visibility: visible;
+    display: grid;
+}
+dialog.modal::backdrop {
+    background: rgba(0, 0, 0, 0.8);
 }
 .modal-backdrop {
     position: absolute;
@@ -409,15 +418,37 @@ body.modal-open {
     font-weight: 600; text-decoration: none; transition: all 0.2s ease;
     border: none; cursor: pointer;
 }
-.btn-primary { background: var(--brand); color: black; }
+.btn-primary { background: var(--brand); color: #000000; }
 .btn-primary:hover { 
-    background: #9389f7; /* slightly darker/more saturated lilac */
-    color: white;
+    background: #6c5ce7; /* darker lilac for better contrast with white text */
+    color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(162, 155, 254, 0.3);
 }
 .btn-primary:active {
     transform: translateY(0);
+}
+
+/* CTA Section */
+.cta-section {
+    background: #f8f9fa;
+    text-align: center;
+    padding: 4rem 0;
+}
+.cta-section p {
+    margin-bottom: 2rem;
+    color: var(--muted);
+}
+.cta-section .btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.about-title {
+    text-align: left;
+    margin-bottom: 1.5rem;
 }
 
 .nav .btn {

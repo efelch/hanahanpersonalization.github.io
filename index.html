@@ -34,10 +34,10 @@
       "image": "https://hanahanpersonalization.com/images/logo.svg",
       "@id": "https://hanahanpersonalization.com",
       "url": "https://hanahanpersonalization.com",
-      "telephone": "",
+      "telephone": "+1-843-000-0000",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "",
+        "streetAddress": "Hanahan, SC",
         "addressLocality": "Hanahan",
         "addressRegion": "SC",
         "postalCode": "29410",
@@ -97,6 +97,7 @@
     <link href="styles.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="icon" type="image/x-icon" href="images/logo.ico">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
 
@@ -120,29 +121,11 @@
     </div>
 </header>
 
-<script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-
-    navToggle.addEventListener('click', () => {
-        nav.classList.toggle('is-open');
-        navToggle.classList.toggle('is-active');
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
-            nav.classList.remove('is-open');
-            navToggle.classList.remove('is-active');
-        }
-    });
-</script>
-
 <main>
     <section class="hero">
         <div class="container">
             <div class="hero-logo">
-                <img src="images/logo.svg" alt="Hanahan Personalization Logo" class="hero-logo-icon">
+                <img src="images/logo.svg" alt="Hanahan Personalization Logo" class="hero-logo-icon" width="200" height="200">
             </div>
             <h1>Personalized gifts and unique decor</h1>
             <p>From welcoming a new arrival to celebrating big milestones, we create custom handmade decor that makes every occasion more memorable.</p>
@@ -155,10 +138,10 @@
     <section class="section about-us" id="about">
         <div class="container about-inner">
             <div class="about-image">
-                <img src="images/aboutus.jpeg" alt="Hanahan Personalization Founder">
+                <img src="images/aboutus.jpeg" alt="Hanahan Personalization Founder" width="600" height="450" loading="lazy">
             </div>
             <div class="about-content">
-                <div class="section-title" style="text-align: left; margin-bottom: 1.5rem;">
+                <div class="section-title about-title">
                     <h2>About Us</h2>
                 </div>
                 <p>Welcome to Hanahan Personalization! We are Edward and Monica Felch, and we create custom, personalized gifts and decor for important moments. We make everything in our workshop, which includes a wide variety of woodworking tools as well as laser engravers.</p>

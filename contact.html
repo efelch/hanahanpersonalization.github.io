@@ -32,6 +32,7 @@
     <link href="styles.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="icon" type="image/x-icon" href="images/logo.ico">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
 
@@ -54,24 +55,6 @@
         </nav>
     </div>
 </header>
-
-<script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-
-    navToggle.addEventListener('click', () => {
-        nav.classList.toggle('is-open');
-        navToggle.classList.toggle('is-active');
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
-            nav.classList.remove('is-open');
-            navToggle.classList.remove('is-active');
-        }
-    });
-</script>
 
 <main>
     <section class="section">
@@ -100,7 +83,8 @@
                     </div>
 
                     <!-- Honeypot for basic bot deterrence -->
-                    <input aria-hidden="true" autocomplete="off" class="hp-field" name="_gotcha" tabindex="-1" type="text">
+                    <label for="gotcha" class="sr-only" style="display:none;">Leave this field empty</label>
+                    <input aria-hidden="true" autocomplete="off" class="hp-field" id="gotcha" name="_gotcha" tabindex="-1" type="text">
 
                     <!-- Success redirect (optional): replace with a thank-you page if you add one -->
                     <input name="_subject" type="hidden" value="New message from macabreandmirthworks.com">
