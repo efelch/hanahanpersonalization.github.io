@@ -77,13 +77,13 @@
     <section class="section">
         <div class="container">
             <div class="section-title">
-                <h1>Our Portfolio</h1>
+                <h1 id="portfolio-title">Our Portfolio</h1>
                 <p>A collection of our favorite custom projects and personalized creations. We can make an endless amount of things, we hope these inspire you!</p>
             </div>
 
             <!-- Weddings -->
-            <div class="portfolio-group" id="weddings">
-                <h2 class="group-title">Custom Wooden Wedding & Anniversary Gifts</h2>
+            <section class="portfolio-group" id="weddings" aria-labelledby="weddings-heading">
+                <h2 class="group-title" id="weddings-heading">Custom Wooden Wedding & Anniversary Gifts</h2>
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-image">
@@ -194,10 +194,11 @@
                         </div>
                     </div>
                 </div>
+            </section>
 
             <!-- Baby/Nursery -->
-            <div class="portfolio-group" id="nursery">
-                <h2 class="group-title">Personalized Nursery & Baby Decor: Milestones, Birth Announcements, Nursery Signs</h2>
+            <section class="portfolio-group" id="nursery" aria-labelledby="nursery-heading">
+                <h2 class="group-title" id="nursery-heading">Personalized Nursery & Baby Decor: Milestones, Birth Announcements, Nursery Signs</h2>
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-image">
@@ -290,11 +291,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Signs -->
-            <div class="portfolio-group" id="signs">
-                <h2 class="group-title">Laser Engraved Custom/Personalized Home Signs</h2>
+            <section class="portfolio-group" id="signs" aria-labelledby="signs-heading">
+                <h2 class="group-title" id="signs-heading">Laser Engraved Custom/Personalized Home Signs</h2>
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-image">
@@ -315,11 +316,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Graduation -->
-            <div class="portfolio-group" id="graduation">
-                <h2 class="group-title">Graduation</h2>
+            <section class="portfolio-group" id="graduation" aria-labelledby="graduation-heading">
+                <h2 class="group-title" id="graduation-heading">Graduation</h2>
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-image">
@@ -376,11 +377,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Home Decor / Misc -->
-            <div class="portfolio-group" id="home-decor">
-                <h2 class="group-title">Home Decor / Misc</h2>
+            <section class="portfolio-group" id="home-decor" aria-labelledby="home-decor-heading">
+                <h2 class="group-title" id="home-decor-heading">Home Decor / Misc</h2>
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-image">
@@ -445,27 +446,9 @@
                             <p>A beautiful multi-layered wooden map of the Charleston Bay area.</p>
                         </div>
                     </div>
-
                 </div>
-            </div>
+            </section>
 
-            <!-- Holidays -->
-            <div class="portfolio-group" id="holidays">
-                <h2 class="group-title">Holidays</h2>
-                <div class="product-grid">
-                    <p class="empty-message">Holiday collections coming soon! Check back for seasonal favorites.</p>
-                </div>
-            </div>
-
-                <!-- Personalized Items -->
-                <div class="portfolio-group" id="personalized">
-                    <h2 class="group-title">Personalized Items</h2>
-                    <div class="product-grid">
-                        <p class="empty-message">Examples coming soon of peronalized knives, pens, baseballs, softballs, etc.</p>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </section>
 
@@ -478,12 +461,15 @@
     </section>
 </main>
 
-<footer class="site-footer">
-    <div class="container">
-        <p>Halloween/Christmas: <a href="https://www.macabreandmirthworks.com" target="_blank" rel="noopener noreferrer">Macabre and Mirthworks</a></p>
-        <p>&copy; 2026 Hanahan Personalization. All rights reserved.</p>
-    </div>
-</footer>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <p><strong>Serving:</strong> Hanahan, North Charleston, Summerville, Goose Creek, and the greater Charleston, SC area.</p>
+                <p>Halloween/Christmas: <a href="https://www.macabreandmirthworks.com" target="_blank" rel="noopener noreferrer">Macabre and Mirthworks</a></p>
+                <p>&copy; 2026 Hanahan Personalization. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 <!-- Image Modal -->
 <div aria-hidden="true" class="modal" id="imageModal">
