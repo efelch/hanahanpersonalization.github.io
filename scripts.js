@@ -16,4 +16,82 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Image modal with keyboard navigation
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        const closeBtn = modal.querySelector('.modal-close');
+        const prevBtn = modal.querySelector('.modal-prev');
+        const nextBtn = modal.querySelector('.modal-next');
+        const backdrop = modal.querySelector('.modal-backdrop');
+        const productCards = Array.from(document.querySelectorAll('.product-card'));
+        let lastFocused = null;
+        let currentIndex = -1;
+
+        function showIndex(index) {
+            if (index < 0) index = productCards.length - 1;
+            if (index >= productCards.length) index = 0;
+            currentIndex = index;
+            const card = productCards[currentIndex];
+            const img = card.querySelector('img');
+            const title = card.querySelector('h3')?.textContent || '';
+            if (img) {
+                modalImg.src = img.src;
+                modalImg.alt = img.alt || '';
+                modalCaption.textContent = title;
+            }
+        }
+
+        function openModal(index) {
+            lastFocused = document.activeElement;
+            showIndex(index);
+            modal.showModal();
+            document.body.classList.add('modal-open');
+            closeBtn && closeBtn.focus();
+        }
+
+        function closeModal() {
+            modal.close();
+            document.body.classList.remove('modal-open');
+            modalImg.src = '';
+            if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+        }
+
+        productCards.forEach((card, index) => {
+            card.addEventListener('click', () => openModal(index));
+        });
+
+        closeBtn && closeBtn.addEventListener('click', closeModal);
+        prevBtn && prevBtn.addEventListener('click', () => showIndex(currentIndex - 1));
+        nextBtn && nextBtn.addEventListener('click', () => showIndex(currentIndex + 1));
+        backdrop && backdrop.addEventListener('click', (e) => {
+            if (e.target === backdrop || e.target.dataset.close === 'true') closeModal();
+        });
+        modal.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                showIndex(currentIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                showIndex(currentIndex + 1);
+            }
+        });
+        // Native <dialog> handles Escape; keep body state in sync on close
+        modal.addEventListener('close', () => {
+            document.body.classList.remove('modal-open');
+        });
+    }
+
+    // Back to top button
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('is-visible', window.scrollY > 400);
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });
