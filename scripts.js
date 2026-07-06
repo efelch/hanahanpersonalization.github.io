@@ -84,6 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Portfolio filter bar: boost contrast once it sticks while scrolling
+    const filterBar = document.querySelector('.portfolio-filter');
+    if (filterBar) {
+        const stickyTop = parseInt(getComputedStyle(filterBar).top, 10) || 0;
+        const updateStuck = () => {
+            const stuck = filterBar.getBoundingClientRect().top <= stickyTop + 1;
+            filterBar.classList.toggle('is-stuck', stuck);
+        };
+        window.addEventListener('scroll', updateStuck, { passive: true });
+        updateStuck();
+    }
+
     // Back to top button
     const backToTop = document.querySelector('.back-to-top');
     if (backToTop) {
