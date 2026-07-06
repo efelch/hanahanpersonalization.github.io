@@ -1,19 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Update year in footer (no-op if there is no #year element)
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Mobile nav toggle.
+    // Sets both class-based (.is-open/.is-active) and body/aria state so the
+    // same script works regardless of which theme drives the nav visibility.
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.nav');
 
     if (navToggle && nav) {
+        const setOpen = (open) => {
+            nav.classList.toggle('is-open', open);
+            navToggle.classList.toggle('is-active', open);
+            document.body.classList.toggle('nav-open', open);
+            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+
         navToggle.addEventListener('click', () => {
-            nav.classList.toggle('is-open');
-            navToggle.classList.toggle('is-active');
+            setOpen(!nav.classList.contains('is-open'));
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
-                nav.classList.remove('is-open');
-                navToggle.classList.remove('is-active');
+                setOpen(false);
             }
+        });
+
+        // Close menu when a nav link is clicked
+        nav.addEventListener('click', (e) => {
+            if (e.target.closest('a')) setOpen(false);
+        });
+
+        // Close menu on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') setOpen(false);
         });
     }
 
@@ -38,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = card.querySelector('img');
             const title = card.querySelector('h3')?.textContent || '';
             if (img) {
-                modalImg.src = img.src;
+                modalImg.src = img.getAttribute('data-full') || img.src;
                 modalImg.alt = img.alt || '';
                 modalCaption.textContent = title;
             }
