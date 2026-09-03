@@ -127,25 +127,6 @@ body {
     color: var(--muted);
 }
 
-.swatch-header {
-    border-color: var(--border);
-}
-
-.swatch {
-    background: var(--panel);
-    border-color: var(--border);
-    box-shadow: 0 6px 20px var(--shadow);
-}
-
-.swatch .chip {
-    border-color: var(--border);
-}
-
-.swatch .desc,
-.legend {
-    color: var(--muted);
-}
-
 .group-title {
     border-bottom-color: var(--brand);
 }
