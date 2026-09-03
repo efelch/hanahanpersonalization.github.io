@@ -36,19 +36,20 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
     <div class="container header-inner">
-        <a class="logo" href="/">
-            <span>Hanahan Personalization</span>
+        <a class="logo" href="/" aria-label="Hanahan Personalization home">
+            <img class="logo-icon" src="images/logo.svg" alt="" aria-hidden="true">
+            <span class="logo-text">Hanahan Personalization</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false">
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
         </button>
-        <nav class="nav" aria-label="Main navigation">
-            <ul>
+        <nav class="nav" aria-label="Primary">
+            <ul id="primary-nav">
                 <li><a href="/">Home</a></li>
                 <li><a class="active" href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
@@ -57,7 +58,7 @@
     </div>
 </header>
 
-<main>
+<main id="main">
     <section class="section">
         <div class="container">
             <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -66,10 +67,10 @@
                     <li aria-current="page">Portfolio</li>
                 </ol>
             </nav>
-            <div class="section-title">
+            <header class="section-header">
                 <h1 id="portfolio-title">Our Portfolio</h1>
                 <p>A collection of our favorite custom projects and personalized creations. We can make an endless amount of things, we hope these inspire you!</p>
-            </div>
+            </header>
 
             <nav class="portfolio-filter" aria-label="Portfolio categories">
                 <a href="#weddings">Weddings</a>
@@ -472,20 +473,23 @@
         <div class="container">
             <h2>Ready to start your own project?</h2>
             <p>We'd love to help you create something special and unique.</p>
-            <a href="contact.html" class="btn btn-primary">Start Your Custom Design</a>
+            <a href="contact.html" class="btn primary">Start Your Custom Design</a>
         </div>
     </section>
 </main>
 
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <p><strong>Serving:</strong> Hanahan, North Charleston, Summerville, Goose Creek, and the greater Charleston, SC area.</p>
-                <p>Halloween/Christmas: <a href="https://www.macabreandmirthworks.com" target="_blank" rel="noopener noreferrer">Macabre and Mirthworks</a></p>
-                <p>&copy; 2026 Hanahan Personalization. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p><strong>Serving:</strong> Hanahan, North Charleston, Summerville, Goose Creek, and the greater Charleston, SC area.</p>
+        <p>Halloween/Christmas: <a href="https://www.macabreandmirthworks.com" target="_blank" rel="noopener noreferrer">Macabre and Mirthworks</a></p>
+        <nav aria-label="Social">
+            <ul class="social-links">
+                <li><a href="https://www.facebook.com/hanahanpersonalization" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+            </ul>
+        </nav>
+        <small class="copyright">&copy; 2026 Hanahan Personalization. All rights reserved.</small>
+    </div>
+</footer>
 
 <!-- Image Modal -->
 <dialog class="modal" id="imageModal">

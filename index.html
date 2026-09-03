@@ -101,19 +101,20 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
     <div class="container header-inner">
-        <a class="logo" href="/">
-            <span>Hanahan Personalization</span>
+        <a class="logo" href="/" aria-label="Hanahan Personalization home">
+            <img class="logo-icon" src="images/logo.svg" alt="" aria-hidden="true">
+            <span class="logo-text">Hanahan Personalization</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false">
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
         </button>
-        <nav class="nav">
-            <ul>
+        <nav class="nav" aria-label="Primary">
+            <ul id="primary-nav">
                 <li><a class="active" href="/">Home</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
@@ -122,7 +123,7 @@
     </div>
 </header>
 
-<main>
+<main id="main">
     <section class="hero">
         <div class="container">
             <div class="hero-logo">
@@ -132,21 +133,21 @@
             <p>From welcoming a new arrival to celebrating big milestones, we create custom handmade decor that makes every occasion more memorable.</p>
             <p>We mostly advertise on Facebook, but contact us here to start a dialogue for your custom order!</p>
             <div class="hero-actions">
-                <a class="btn btn-primary" href="contact.html">Start Your Custom Design</a>
-                <a class="btn btn-secondary" href="portfolio.html">Explore Our Portfolio</a>
+                <a class="btn primary" href="contact.html">Start Your Custom Design</a>
+                <a class="btn secondary" href="portfolio.html">Explore Our Portfolio</a>
             </div>
         </div>
     </section>
-    
-    <section class="section about-us" id="about">
+
+    <section class="section" id="about">
         <div class="container about-inner">
             <div class="about-image">
                 <img src="images/aboutus.webp" alt="Hanahan Personalization Founder" width="600" height="450" loading="lazy">
             </div>
             <div class="about-content">
-                <div class="section-title about-title">
+                <header class="section-header left">
                     <h2>About Us</h2>
-                </div>
+                </header>
                 <ul class="about-highlights">
                     <li><span class="about-icon" aria-hidden="true">🪚</span> Handcrafted woodworking</li>
                     <li><span class="about-icon" aria-hidden="true">✨</span> Precision laser engraving</li>
@@ -159,17 +160,51 @@
             </div>
         </div>
     </section>
+
+    <section class="section alt" id="faq">
+        <div class="container">
+            <header class="section-header">
+                <h2>FAQ</h2>
+            </header>
+            <div class="faq-list">
+                <details>
+                    <summary>Do you take custom orders?</summary>
+                    <p>Yes! Custom orders are most of what we do. Send us a message through our <a href="contact.html">contact form</a> with your idea and timeline, and we'll help bring it to life.</p>
+                </details>
+                <details>
+                    <summary>What materials do you work with?</summary>
+                    <p>Mostly wood and acrylic, engraved or cut with our laser engravers, plus general woodworking for larger pieces like signs and stands. Ask us if you have a specific material in mind.</p>
+                </details>
+                <details>
+                    <summary>What's your typical turnaround time?</summary>
+                    <p>It varies by project complexity and our current order queue. We'll give you an estimate when you reach out with your idea.</p>
+                </details>
+                <details>
+                    <summary>Local pickup or shipping?</summary>
+                    <p>Both! We're based in Hanahan, SC, so local pickup is available, and we also ship within the United States.</p>
+                </details>
+                <details>
+                    <summary>Where can I buy your Halloween and Christmas decor?</summary>
+                    <p>That side of what we make lives on our sister site, <a href="https://www.macabreandmirthworks.com" target="_blank" rel="noopener noreferrer">Macabre and Mirthworks</a>.</p>
+                </details>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer class="site-footer">
-    <div class="container footer-grid">
-        <div class="footer-info">
-            <p><strong>Serving:</strong> Hanahan, North Charleston, Summerville, Goose Creek, and the greater Charleston, SC area.</p>
-            <p>Halloween/Christmas: <a href="https://www.macabreandmirthworks.com" target="_blank" rel="noopener noreferrer">Macabre and Mirthworks</a></p>
-            <p>&copy; 2026 Hanahan Personalization. All rights reserved.</p>
-        </div>
+    <div class="container footer-inner">
+        <p><strong>Serving:</strong> Hanahan, North Charleston, Summerville, Goose Creek, and the greater Charleston, SC area.</p>
+        <p>Halloween/Christmas: <a href="https://www.macabreandmirthworks.com" target="_blank" rel="noopener noreferrer">Macabre and Mirthworks</a></p>
+        <nav aria-label="Social">
+            <ul class="social-links">
+                <li><a href="https://www.facebook.com/hanahanpersonalization" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+            </ul>
+        </nav>
+        <small class="copyright">&copy; 2026 Hanahan Personalization. All rights reserved.</small>
     </div>
 </footer>
 
+<button class="back-to-top" type="button" aria-label="Back to top">&uarr;</button>
 </body>
 </html>

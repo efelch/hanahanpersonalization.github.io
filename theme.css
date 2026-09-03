@@ -20,6 +20,11 @@ body {
     color: var(--text);
 }
 
+.skip-link:focus {
+    background: var(--brand);
+    color: #1e272e;
+}
+
 .nav a {
     color: var(--text);
 }
@@ -87,7 +92,11 @@ body {
     color: var(--muted);
 }
 
-.section-title p {
+.section.alt {
+    background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0) 30%);
+}
+
+.section-header p {
     color: var(--muted);
 }
 
@@ -96,6 +105,44 @@ body {
 }
 
 .about-content p {
+    color: var(--muted);
+}
+
+.services-list li {
+    background: var(--panel);
+    border-color: var(--border);
+    box-shadow: 0 6px 16px var(--shadow);
+}
+
+.services-list p {
+    color: var(--muted);
+}
+
+.faq-list details {
+    background: var(--panel);
+    border-color: var(--border);
+}
+
+.faq-list p {
+    color: var(--muted);
+}
+
+.swatch-header {
+    border-color: var(--border);
+}
+
+.swatch {
+    background: var(--panel);
+    border-color: var(--border);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.swatch .chip {
+    border-color: var(--border);
+}
+
+.swatch .desc,
+.legend {
     color: var(--muted);
 }
 
@@ -214,35 +261,35 @@ body {
     border-top-color: var(--border);
 }
 
-.footer-info strong {
-    color: var(--text);
-}
-
-.footer-social a {
+.social-links a {
     color: var(--muted);
 }
 
-.footer-social a:hover {
+.social-links a:hover {
     color: var(--brand);
 }
 
-.btn-primary {
+.copyright {
+    color: var(--muted);
+}
+
+.btn.primary {
     background: var(--brand);
     color: #000000;
 }
 
-.btn-primary:hover { 
+.btn.primary:hover {
     background: #6c5ce7;
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(162, 155, 254, 0.3);
 }
 
-.btn-secondary {
+.btn.secondary {
     color: var(--text);
     border-color: var(--brand);
 }
 
-.btn-secondary:hover {
+.btn.secondary:hover {
     background: var(--brand);
     color: #000000;
     box-shadow: 0 4px 12px rgba(162, 155, 254, 0.3);

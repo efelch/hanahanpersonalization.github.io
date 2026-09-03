@@ -36,19 +36,20 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
     <div class="container header-inner">
-        <a class="logo" href="/">
-            <span>Hanahan Personalization</span>
+        <a class="logo" href="/" aria-label="Hanahan Personalization home">
+            <img class="logo-icon" src="images/logo.svg" alt="" aria-hidden="true">
+            <span class="logo-text">Hanahan Personalization</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false">
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
         </button>
-        <nav class="nav" aria-label="Main navigation">
-            <ul>
+        <nav class="nav" aria-label="Primary">
+            <ul id="primary-nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a class="active" href="contact.html">Contact Us</a></li>
@@ -57,7 +58,7 @@
     </div>
 </header>
 
-<main>
+<main id="main">
     <section class="section">
         <div class="container">
             <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -66,10 +67,10 @@
                     <li aria-current="page">Contact Us</li>
                 </ol>
             </nav>
-            <div class="section-title">
+            <header class="section-header">
                 <h1>Contact Us</h1>
                 <p>Have a question or want to discuss a custom order? We'd love to hear from you!</p>
-            </div>
+            </header>
 
             <!-- Contact -->
             <div class="contact-container">
@@ -90,15 +91,14 @@
                     </div>
 
                     <!-- Honeypot for basic bot deterrence -->
-                    <label for="gotcha" class="sr-only" style="display:none;">Leave this field empty</label>
-                    <input aria-hidden="true" autocomplete="off" class="hp-field" id="gotcha" name="_gotcha" tabindex="-1" type="text">
+                    <input aria-hidden="true" autocomplete="off" class="hp-field" name="_gotcha" tabindex="-1" type="text">
 
                     <!-- Success redirect (optional): replace with a thank-you page if you add one -->
                     <input name="_subject" type="hidden" value="New message from hanahanpersonalization.com">
                     <input name="_format" type="hidden" value="plain">
 
                     <div class="form-actions">
-                        <button class="btn btn-primary" type="submit">Send message</button>
+                        <button class="btn primary" type="submit">Send message</button>
                     </div>
                 </form>
 
@@ -107,15 +107,19 @@
     </section>
 </main>
 
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <p><strong>Serving:</strong> Hanahan, North Charleston, Summerville, Goose Creek, and the greater Charleston, SC area.</p>
-                <p>Halloween/Christmas: <a href="https://www.macabreandmirthworks.com" target="_blank" rel="noopener noreferrer">Macabre and Mirthworks</a></p>
-                <p>&copy; 2026 Hanahan Personalization. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p><strong>Serving:</strong> Hanahan, North Charleston, Summerville, Goose Creek, and the greater Charleston, SC area.</p>
+        <p>Halloween/Christmas: <a href="https://www.macabreandmirthworks.com" target="_blank" rel="noopener noreferrer">Macabre and Mirthworks</a></p>
+        <nav aria-label="Social">
+            <ul class="social-links">
+                <li><a href="https://www.facebook.com/hanahanpersonalization" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+            </ul>
+        </nav>
+        <small class="copyright">&copy; 2026 Hanahan Personalization. All rights reserved.</small>
+    </div>
+</footer>
 
+<button class="back-to-top" type="button" aria-label="Back to top">&uarr;</button>
 </body>
 </html>
